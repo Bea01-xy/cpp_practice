@@ -7,7 +7,6 @@ void signal_handler(int signum)
     std::cout << "signal(" << signum << ") received.\nshutting down." << std::endl;
     exit(signum);
 }
-
 int main (int argc, char *argv[]) {
     signal(SIGINT, signal_handler);
     int i = 0;
