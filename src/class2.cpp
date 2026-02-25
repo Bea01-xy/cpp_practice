@@ -23,6 +23,7 @@ public:
         std::cout << "This dog is barking." << std::endl;
     }
 };
+
 class Cat : public Animal {
 public:
     void speak(void) override 
@@ -30,8 +31,6 @@ public:
         std::cout << "This cat is meowing." << std::endl;
     }
 };
-
-
 
 int main (int argc, char *argv[]) {
     auto dog_ptr = new Dog;

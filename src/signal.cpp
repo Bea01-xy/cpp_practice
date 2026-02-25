@@ -6,19 +6,19 @@ void signal_handler(int signum)
 {
     std::cout << "signal(" << signum << ") received.\nshutting down." << std::endl;
     exit(signum);
-
 }
+
 int main (int argc, char *argv[]) {
     signal(SIGINT, signal_handler);
-    int i = 0;
+    int counter = 0;
 
     while (1) {
         std::cout << "about to sleep..." << std::endl;
-        if(i == 3){
+        if(counter == 3){
             raise(SIGINT);
         }
         sleep(1);
-        i++;
+        counter++;
     }
 
     return 0;
